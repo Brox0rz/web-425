@@ -1,13 +1,16 @@
 import { IPerson } from './person.interface';
 
-export class Person implements IPerson {
-  constructor(public firstName: string, public lastName: string) {}
+class Person implements IPerson {
 
-  getFullName(): string {
-    return `${this.firstName} ${this.lastName}`;
+    firstName: string;
+    lastName: string;
+
+  constructor(firstName: string, lastName: string) {
+    this.firstName = firstName;
+    this.lastName = lastName;
   }
 }
 
 // Usage
-const person = new Person("Brock", "Hemsouvanh");
-console.log(person.getFullName());
+let myName = new Person("Brock", "Hemsouvanh");
+console.log(`My name is ${myName.firstName} ${myName.lastName}`);
