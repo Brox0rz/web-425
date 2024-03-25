@@ -1,3 +1,10 @@
+/**
+ * File name: my-image.component.ts
+ * File description: Component logic for my-image.
+ * Author(s): Brock Hemsouvanh and Professor Richard Krasso
+ * Date created: 2024-03-24
+ */
+
 import { Component, OnInit } from '@angular/core';
 
 @Component({
