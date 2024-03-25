@@ -1,3 +1,10 @@
+/**
+ * File name: app.component.ts
+ * File description: Main TS component for the app.
+ * Author(s): Brock Hemsouvanh and Professor Richard Krasso
+ * Date created: 2024-03-24
+ */
+
 import { Component } from '@angular/core';
 
 @Component({
