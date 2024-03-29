@@ -6,6 +6,26 @@
  */
 
 import { Component, OnInit } from '@angular/core';
+import { $ } from 'protractor';
+
+export default class Person {
+  fullName: string;
+  favoriteFood: string;
+  favoriteColor: string;
+  keywords = [
+    "#TypeScript", "#2024", "#CodingWithAngular", "ngSanDiego"
+  ];
+
+  constructor(fullName: string, favoriteFood: string, favoriteColor: string) {
+    this.fullName = fullName;
+    this.favoriteFood = favoriteFood;
+    this.favoriteColor = favoriteColor;
+  }
+
+  toString() {
+    console.log(`\n Full name: ${this.fullName}\n Favorite food: ${this.favoriteFood}\n Favorite color: ${this.favoriteColor}`);
+  }
+}
 
 @Component({
   selector: 'app-my-details',
@@ -14,7 +34,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyDetailsComponent implements OnInit {
 
-  constructor() { }
+  myProfile: Person;
+
+  constructor() {
+    this.myProfile = new Person("Brock Hemsouvanh", "Polenta", "Teal");
+    this.myProfile.toString();
+   }
 
   ngOnInit(): void {
   }
