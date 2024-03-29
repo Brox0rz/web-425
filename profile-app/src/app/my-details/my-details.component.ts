@@ -6,9 +6,8 @@
  */
 
 import { Component, OnInit } from '@angular/core';
-import { $ } from 'protractor';
 
-export default class Person {
+export class Person {
   fullName: string;
   favoriteFood: string;
   favoriteColor: string;
