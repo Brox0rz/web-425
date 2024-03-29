@@ -1,0 +1,51 @@
+<!--
+ * File name: app-component.html
+ * File description: Providing structure for the components
+ * Author(s): Brock Hemsouvanh & Professor Richard Krasso https://www.youtube.com/watch?v=WDC2FvDTi_4
+ * Date created: 2024-03-27
+-->
+
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+
+<ul class="navbar-nav">
+
+  <li class="navbar-item active">
+
+    <a class="nav-link" routerLink="/home">Home</a>
+
+  </li>
+
+  <li class="navbar-item">
+
+    <a class="nav-link" routerLink="/about">About</a>
+
+  </li>
+
+  <li class="navbar-item">
+
+    <a class="nav-link" routerLink="/contact">Contact</a>
+
+  </li>
+</ul>
+
+</nav>
+
+<div class="container">
+  <br /><br />
+
+    <h2>Exercise 2.2 - Navigation</h2>
+  <div class="row">
+    <div class="col-sm-12">
+
+      <div class="alert alert-success" role="alert">
+
+<router-outlet>
+<!-- showing the contact HTML code -->
+</router-outlet>
+
+      </div>
+    </div>
+  </div>
+
+</div>
