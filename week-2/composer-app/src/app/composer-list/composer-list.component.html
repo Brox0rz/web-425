@@ -1,0 +1,22 @@
+<!--
+File name: composer-list.component.html
+Description: Displays a list of composers in tabular format.
+Author: Brock Hemsouvanh
+Date: 2024-03-30
+-->
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Full name</th>
+        <th>Genre</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let composer of composers">
+        <td>{{ composer.fullName }}</td>
+        <td>{{ composer.genre }}</td>
+      </tr>
+    </tbody>
+  </table>
+
