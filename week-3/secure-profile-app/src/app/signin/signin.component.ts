@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signin',
@@ -7,13 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SigninComponent implements OnInit {
 
-  constructor() { }
+  isLoggedIn = false;
+
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
   signin() {
-    alert("User signed in")
+    this.isLoggedIn = true;
+
+    this.router.navigate(['/home'], {queryParams: {isLoggedIn: this.isLoggedIn}, skipLocationChange: true})
   }
 
 }
