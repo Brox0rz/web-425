@@ -12,7 +12,6 @@ import { IComposer } from '../composer.interface'; // Interface for composer obj
 import { ComposerService } from '../composer.service'; // Service to retrieve composer data
 import { FormControl } from '@angular/forms';
 import { debounceTime } from 'rxjs/operators';
-import { Observable } from 'rxjs'; // Import Observable from rxjs
 
 // Component decorator with metadata including selector, template URL, and style URLs
 @Component({
@@ -22,8 +21,8 @@ import { Observable } from 'rxjs'; // Import Observable from rxjs
 })
 export class ComposerListComponent implements OnInit {
 
-  // Property to hold an array of composers, initialized to an empty array,
-  composers: Observable<IComposer[]>; // Now as Observable type
+  // Property to hold an array of composers, initialized to an empty array
+  composers: Array<IComposer>;
   txtSearchControl = new FormControl('');
 
   // Constructor injecting ComposerService to fetch composer data

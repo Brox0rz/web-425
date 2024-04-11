@@ -10,9 +10,6 @@
 import { Injectable } from '@angular/core';
 // Importing IComposer interface to type-check our composers
 import { IComposer } from './composer.interface';
-// Importing Observable and of from rxjs to work with reactive programming concepts
-import { Observable } from 'rxjs';
-import { of } from 'rxjs';
 
 // @Injectable decorator marks this class as one that participates in the dependency injection system
 @Injectable({
@@ -29,8 +26,8 @@ export class ComposerService {
   ];
 
   // getComposers(): Method to get the list of composer objects
-  getComposers(): Observable<IComposer[]> {
-    return of(this.composers); // Returns the array of composers - wrapped inside an Observable
+  getComposers(): Array<IComposer> {
+    return this.composers; // Returns the array of composers
   }
 
   // getComposer(composerId: number): Method to find a composer by their ID
