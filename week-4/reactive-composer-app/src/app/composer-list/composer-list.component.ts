@@ -26,23 +26,19 @@ export class ComposerListComponent implements OnInit {
   composers: Observable<IComposer[]>; // Now as Observable type
   txtSearchControl = new FormControl('');
 
- // Constructor injecting ComposerService to fetch composer data
- constructor(private composerService: ComposerService) {
-  // Populating the composers observable with all composer data initially
-  this.composers = this.composerService.getComposers();
+  // Constructor injecting ComposerService to fetch composer data
+  constructor(private composerService: ComposerService) {
+    // Using the composerService to populate the composers array with composer data
+    this.composers = this.composerService.getComposers();
 
-  // Subscribe to changes in the search field with debounce to limit requests
-  this.txtSearchControl.valueChanges
-    .pipe(debounceTime(500))
-    .subscribe(val => this.filterComposers(val));
-}
+    this.txtSearchControl.valueChanges.pipe(debounceTime(500)).subscribe(val => this.filterComposers(val));
+  }
 
-// Lifecycle hook for additional initialization tasks
-ngOnInit(): void {
-}
+  // Lifecycle hook that is called after Angular has initialized all data-bound properties of a directive
+  ngOnInit(): void {
+  }
 
-// Method to filter composers based on the search input
-filterComposers(name: string) {
-  this.composers = this.composerService.filterComposers(name);
-}
+  filterComposers(name: string) {
+    alert(name);
+  }
 }
