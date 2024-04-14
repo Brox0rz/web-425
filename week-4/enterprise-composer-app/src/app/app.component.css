@@ -2,7 +2,7 @@
  * File name: app.component.css
  * File description: Stylesheet with all general styles for the composer-app.
  * Author(s): Brock Hemsouvanh and Professor Richard Krasso
- * Date created: 2024-03-30
+ * Date created: 2024-04-13
  */
 
 
@@ -16,6 +16,14 @@
   color: #212529;
   background-color: #fff;
 }
+
+.assignment-title {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: auto;
+}
+
 
 /* Table styles */
 .table {

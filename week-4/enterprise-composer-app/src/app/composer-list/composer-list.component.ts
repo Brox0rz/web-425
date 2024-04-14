@@ -12,6 +12,7 @@ import { IComposer } from '../composer.interface'; // Interface for composer obj
 import { ComposerService } from '../composer.service'; // Service to retrieve composer data
 import { FormControl } from '@angular/forms';
 import { debounceTime } from 'rxjs/operators';
+import { Observable } from 'rxjs'; // Import Observable from rxjs
 
 // Component decorator with metadata including selector, template URL, and style URLs
 @Component({
@@ -21,23 +22,27 @@ import { debounceTime } from 'rxjs/operators';
 })
 export class ComposerListComponent implements OnInit {
 
-  // Property to hold an array of composers, initialized to an empty array
-  composers: Array<IComposer>;
+  // Property to hold an array of composers, initialized to an empty array,
+  composers: Observable<IComposer[]>; // Now as Observable type
   txtSearchControl = new FormControl('');
 
-  // Constructor injecting ComposerService to fetch composer data
-  constructor(private composerService: ComposerService) {
-    // Using the composerService to populate the composers array with composer data
-    this.composers = this.composerService.getComposers();
+ // Constructor injecting ComposerService to fetch composer data
+ constructor(private composerService: ComposerService) {
+  // Populating the composers observable with all composer data initially
+  this.composers = this.composerService.getComposers();
 
-    this.txtSearchControl.valueChanges.pipe(debounceTime(500)).subscribe(val => this.filterComposers(val));
-  }
+  // Subscribe to changes in the search field with debounce to limit requests
+  this.txtSearchControl.valueChanges
+    .pipe(debounceTime(500))
+    .subscribe(val => this.filterComposers(val));
+}
 
-  // Lifecycle hook that is called after Angular has initialized all data-bound properties of a directive
-  ngOnInit(): void {
-  }
+// Lifecycle hook for additional initialization tasks
+ngOnInit(): void {
+}
 
-  filterComposers(name: string) {
-    alert(name);
-  }
+// Method to filter composers based on the search input
+filterComposers(name: string) {
+  this.composers = this.composerService.filterComposers(name);
+}
 }
