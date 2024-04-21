@@ -18,7 +18,7 @@ import { Observable } from 'rxjs'; // Observable for managing asynchronous data
 export class BookListComponent implements OnInit {
 
   books: Observable<IBook[]>; // Observable array of books
-  header: Array<string> = ['Isbn', 'Title', 'NumOfPages', 'Authors']; // Table headers
+  header: Array<string> = ['isbn', 'title', 'numOfPages', 'authors']; // Table headers
   book: IBook; // Variable to hold book details
 
   constructor(private booksService: BooksService) {
