@@ -1,0 +1,34 @@
+<!--
+  Title: home.component.html
+  Authors: Professor Richard Krasso and Brock Hemsouvanh
+  Modified by: Brock Hemsouvanh
+  Date: 4/26/2024
+  Description: Home component template for GPA Calculator App, containing the grade entry form, transcript summary, and GPA display.
+-->
+
+<div fxLayout="row wrap" fxLayoutGap="20px">
+  <div fxFlex class="grade-form">
+    <mat-card>
+      <mat-card-title>Grade Entry</mat-card-title>
+      <mat-card-content>
+        <!-- Form will go here -->
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div fxFlex class="grade-summary">
+    <mat-card>
+      <mat-card-title>Transcript</mat-card-title>
+      <mat-card-content>
+        <app-grade-summary></app-grade-summary>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+<br />
+<div fxLayout="column" fxLayoutGap="20px">
+  <div fxFlex class="gpa">
+    <mat-card>
+      <mat-card-title style="text-align: center;">GPA: <app-gpa></app-gpa></mat-card-title>
+    </mat-card>
+  </div>
+</div>
