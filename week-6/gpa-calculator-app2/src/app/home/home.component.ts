@@ -1,3 +1,14 @@
+/**
+ * Title: home.component.ts
+ * Author: Professor Richard Krasso
+ * Modified by: Brock Hemsouvanh
+ * Date Created: 04/28/2024
+ * Date Modified: 05/03/2024
+ * Description: Home component for the GPA Calculator application. This component manages the user interactions
+ *              within the home page of the app. It includes functions for handling form submissions, grade calculations,
+ *              and maintaining a list of transcript entries.
+ */
+
 import { Component, OnInit } from '@angular/core';
 import { ITranscript } from '../transcript.interface';
 
